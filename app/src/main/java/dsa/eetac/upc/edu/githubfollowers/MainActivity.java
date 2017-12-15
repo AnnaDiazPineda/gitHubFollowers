@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button exploreUser;
     private EditText nomUser;
-    private String nom = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +22,13 @@ public class MainActivity extends AppCompatActivity {
         nomUser = (EditText) findViewById(R.id.etUser);
         exploreUser = (Button) findViewById(R.id.btExplore);
 
-        nom = nomUser.toString();
+
 
         exploreUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Resultat.class );
+                String nom = nomUser.getText().toString();
                 intent.putExtra("user", nom);
                 startActivity(intent);
             }

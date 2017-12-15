@@ -107,15 +107,16 @@ public class Resultat extends AppCompatActivity {
                         nomConsultat.setText(nameFollower);
                         Log.d(tag, " !!!!!iconName: "+nameFollower);
 
-                        TextView a = (TextView) findViewById(R.id.numRepos);
-                        a.setText(numRepos);
+                       TextView a = (TextView) findViewById(R.id.numRepos);
+                        a.setText(""+numRepos);
 
                         TextView b = (TextView) findViewById(R.id.numFollowing);
-                        b.setText(numFollows);
+                        b.setText(""+numFollows);
 
                         ImageView imageView = (ImageView) findViewById(R.id.imageView);
-                        Log.d(tag, "imatge");
+                            Log.d(tag, "imatge");
                         Picasso.with(Resultat.this).load(urlAvatar).into(imageView);
+
                         break;
                     case 204://no content
 
@@ -127,7 +128,7 @@ public class Resultat extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Follower> call, Throwable t) {
-
+                Log.d(tag, "error");
             }
         });
     }
